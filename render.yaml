@@ -2,5 +2,5 @@ services:
   - type: web
     name: flores-amarillas-maria
     runtime: static
-    buildCommand: npm install && npm run build:web
+    buildCommand: npm run render-build
     staticPublishPath: dist

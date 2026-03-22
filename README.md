@@ -22,7 +22,7 @@ Se genera la carpeta `dist/` con `index.html`, assets y el bundle JS.
 ## Despliegue en Render
 
 1. Crea un **Static Site** y conecta este repositorio.
-2. **Build command:** `npm install && npm run build:web`
+2. **Build command:** `npm run render-build` (Render no permite `&&` en ese campo; el script hace install + export en `package.json`)
 3. **Publish directory:** `dist`
 
 Opcional: en la raíz está `render.yaml` como referencia para configuración como código.
