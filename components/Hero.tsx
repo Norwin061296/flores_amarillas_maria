@@ -15,9 +15,12 @@ import { colors } from '../constants/theme';
 
 const PHOTO = 184;
 
+/** Solo pantallas bien anchas en fila; móviles (~360–480px) siempre columna: foto arriba, textos abajo */
+const SIDE_BY_SIDE_MIN_WIDTH = 720;
+
 function HeroComponent() {
   const { width } = useWindowDimensions();
-  const sideBySide = width >= 400;
+  const sideBySide = width >= SIDE_BY_SIDE_MIN_WIDTH;
   const rise = useRef(new Animated.Value(0)).current;
   const glow = useRef(new Animated.Value(0)).current;
 
@@ -250,9 +253,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 14,
     paddingVertical: 4,
+    width: '100%',
   },
   mainCol: {
+    flexDirection: 'column',
     alignItems: 'center',
+    width: '100%',
     paddingVertical: 4,
   },
   photoBlock: {
